@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body h1 {
+  display: none;
+}
+
+body .watchface {
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+  align-items: center;
+  justify-items: center;
+}
+
+body .watchface span {
+  padding: 5px;
+}
+/*# sourceMappingURL=style.css.map */
