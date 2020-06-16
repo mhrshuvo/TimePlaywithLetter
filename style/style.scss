@@ -13,14 +13,21 @@ body{
 
 
         display: grid;
-        grid-template-columns:100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
-        grid-template-rows:100px 100px 100px 100px 100px 100px 100px 100px; 
+        grid-template-columns:repeat(13, auto) ;
+        grid-template-rows:repeat(8, auto) ; 
         align-items: center;
         justify-items: center;
+        align-content: center;
+        justify-content: center;
         
         span{
             padding: 5px;
         }
+        .glow{
+            background: green;
+        }
+        
         
     }
+    
 }
