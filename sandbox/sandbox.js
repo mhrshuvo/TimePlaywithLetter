@@ -115,12 +115,12 @@ function check(h,m) {
     }
 
 
-    /* Hour=1 - Light "ONE" */
+    // Hour=1 - Light "ONE" 
     if (h==1){
         style('one');
     }
 
-    /* Hour=2 - Light "TWO" */
+    //Hour=2 - Light "TWO" 
     if (h==2){
         style('two');
     }
@@ -140,39 +140,39 @@ function check(h,m) {
         style('fivel');
     }
 
-    /* Hour=6 - Light "SIX" */
+    // Hour=6 - Light "SIX" 
     if (h==6){
         style('six');
     }
 
-    /* Hour=7 - Light "SEVEN" */
+    // Hour=7 - Light "SEVEN" 
     if (h==7){
         style('seven');
     }
 
-    /* Hour=8 - Light "EIGHT" */
+    // Hour=8 - Light "EIGHT" 
     if (h==8){
         style('eight');
     }
 
-    /* Hour=9 - Light "NINE" */
+    // Hour=9 - Light "NINE" 
     if (h==9){
      
         style('nine');
     }
 
-    /* Hour=10 - Light "TEN" */
+    // Hour=10 - Light "TENl" 
     if (h==10){
    
         style('tenl');
     }
 
-    /* Hour=11 - Light "ELEVEN" */
+    // Hour=11 - Light "ELEVEN" 
     if (h==11){
         style('eleven');
     }
 
-    /* Hour=12 - Light "TWELVE" */
+    // Hour=12 - Light "TWELVE" 
     if (h==12){
         style('twelve');
     }
@@ -180,6 +180,8 @@ function check(h,m) {
 
 };
 
-check(twentyFourToTwelve().hours,twentyFourToTwelve().minutes);
+//setInterval(twentyFourToTwelve(), 10000);
+
+check(twentyFourToTwelve().hours,twentyFourToTwelve().minutes)
 
 console.log(twentyFourToTwelve().hours,twentyFourToTwelve().minutes);
