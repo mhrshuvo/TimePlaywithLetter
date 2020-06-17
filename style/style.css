@@ -16,8 +16,14 @@ body {
 body h1 {
   background: rgba(255, 17, 119, 0.6);
   padding: 10px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: white;
+}
+
+body h4 {
+  color: rgba(255, 17, 119, 0.4);
+  font-family: Iceland;
+  padding: 10px;
 }
 
 body .watchface {

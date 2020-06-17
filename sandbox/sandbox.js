@@ -189,7 +189,7 @@ const tick = () =>{
     maintime.innerHTML= `<p>${twentyFourToTwelve().current_time}</p>`
 };
 
-date.innerHTML =`${twentyFourToTwelve().date}`
+date.innerHTML =`<p>${twentyFourToTwelve().date}</p>`
 
 setInterval(tick, 1000);
 
