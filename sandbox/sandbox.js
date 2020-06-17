@@ -1,20 +1,21 @@
-// const now = new Date();
-// let h           = now.getHours();
-// let m           = (now.getMinutes() + 5); // +5 to set time 5 minutes forward
-// let s           = now.getSeconds();
-const span = document.querySelectorAll('span')
+const span        = document.querySelectorAll('span');
+const maintime    = document.querySelector('.maintime');
+const date    = document.querySelector('.date');
+
+
 
 
 function twentyFourToTwelve() {
-    var currentTime = new Date()
-    var hours = currentTime.getHours()
-    var minutes =currentTime.getMinutes()
-    minutes +=5;
-    
+    let currentTime = new Date();
+    let hours       = currentTime.getHours();
+    let minutes     = currentTime.getMinutes();
+    let seconds     = currentTime.getSeconds();
+    let date        = currentTime.toDateString();
+
     if (minutes < 10)
     minutes = 0 + minutes;
     
-    var suffix = "AM";
+    let suffix = "AM";
     if (hours >= 12) {
     suffix = "PM";
     hours = hours - 12;
@@ -22,10 +23,10 @@ function twentyFourToTwelve() {
     if (hours == 0) {
     hours = 12;
     }
-    var current_time = hours + ":" + minutes + " " + suffix;
-    console.log("Current Your System Time is : " + current_time);
+    let current_time =`${hours} : ${minutes} : ${seconds} ${suffix}`;
+    //console.log("Current Your System Time is : " + current_time);
     return {
-        hours , minutes
+        hours , minutes , current_time , date
     };
 }
 
@@ -60,18 +61,18 @@ function check(h,m) {
         style('ten');
         style('minute');
     }
-     /* Minutes between 10-15 or 50-55 - Light "TEN," "MINUTES" */
+     // Minutes between 10-15 or 50-55 - Light "TEN," "MINUTES"  
     if ((m>=10 && m<15) || (m>=50 && m<55)){
         style('ten');
         style('minute');
     }
 
-    /* Minutes between 15-20 or 45-50 - Light "QUARTER" */
+    // Minutes between 15-20 or 45-50 - Light "QUARTER"  
     if ((m>=15 && m<20) || (m>=45 && m<50)){
         style('quarter');
     }
 
-    /* Minutes between 20-25 or 40-45 - Light "TWENTY," "MINUTES" */
+    // Minutes between 20-25 or 40-45 - Light "TWENTY," "MINUTES"  
     if ((m>=20 && m<25) || (m>=40 && m<45)){
        
         style('twenty');
@@ -79,7 +80,7 @@ function check(h,m) {
         style('minute');
     }  
 
-    /* Minutes between 25-30 or 35-40 - Light "TWENTY," "FIVE," "MINUTES" */
+    // Minutes between 25-30 or 35-40 - Light "TWENTY," "FIVE," "MINUTES"  
     if ((m>=25 && m<30) || (m>=35 && m<40)){
         
         style('twenty');
@@ -89,26 +90,26 @@ function check(h,m) {
         style('minute');
     }
 
-    /* Minutes between 30-35 - Light "HALF" */
+    // Minutes between 30-35 - Light "HALF"  
     if ((m>=30 && m<35)){
         style('half');
         
     }
 
-    /* Minutes between 5-35 - Light "PAST" */
+    // Minutes between 5-35 - Light "PAST"  
     if ((m>=5) && (m<35)){
         style('past');
     }
 
-     /* Minutes between 35-60 - Light "TO" & MODIFY CURRENT HOUR VALUE */
+     // Minutes between 35-60 - Light "TO" & MODIFY CURRENT HOUR VALUE 
     if (m>=35){
         style('to');
         h++; //Add 1 from current hour
-            /*Set time to twelve for hour around midnight, noon */
+            //Set time to twelve for hour around midnight, noon 
             if (h==0){
                 h=12; 
             }
-            /*Corner case for 12:35-12:59 */
+            // Corner case for 12:35-12:59 
             if (h==13){
                 h=1;
             }
@@ -177,11 +178,20 @@ function check(h,m) {
         style('twelve');
     }
    
-
 };
 
 //setInterval(twentyFourToTwelve(), 10000);
 
 check(twentyFourToTwelve().hours,twentyFourToTwelve().minutes)
 
-console.log(twentyFourToTwelve().hours,twentyFourToTwelve().minutes);
+const tick = () =>{
+    //console.log(twentyFourToTwelve().current_time);
+    maintime.innerHTML= `<p>${twentyFourToTwelve().current_time}</p>`
+};
+
+date.innerHTML =`${twentyFourToTwelve().date}`
+
+setInterval(tick, 1000);
+
+
+
