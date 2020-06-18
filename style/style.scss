@@ -63,6 +63,16 @@ body{
         }
         
     }
+    .dev{
+        @include style();
+        font-size: .5rem;
+
+            &:hover{
+                color: #FF1177;
+                animation: none;
+            }
+
+    }
     
 }
 
