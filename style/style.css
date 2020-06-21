@@ -79,6 +79,82 @@ body .dev:hover {
   animation: none;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact ul {
+  list-style: none;
+  position: relative;
+  display: inline-block;
+}
+
+.contact ul .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #ff1177;
+  line-height: 50px;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Monoton', cursive;
+  font-size: 1.75rem;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.contact ul li {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: #ff1177;
+  line-height: 55px;
+  margin: 0 -16px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color .5s ease-out, border-radius .5s .25s ease-out, margin .5s .25s ease-out;
+}
+
+.contact ul li:hover {
+  background: rgba(255, 17, 119, 0.3);
+}
+
+.contact ul li i {
+  color: white;
+  font-size: 22px;
+  opacity: 0;
+  transition: opacity 1.7s;
+}
+
+.contact ul li:nth-child(1) {
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.contact ul li:nth-child(5) {
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.contact ul:hover .text {
+  opacity: 0;
+  transition: opacity 0.5 .125 ease-out;
+}
+
+.contact ul:hover i {
+  opacity: 1;
+}
+
+.contact ul:hover li {
+  border-radius: 50px;
+  margin: 0 3px;
+}
+
 @keyframes neon1 {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
