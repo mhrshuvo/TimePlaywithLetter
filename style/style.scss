@@ -2,46 +2,45 @@ $pcolor: rgb(255, 17, 119);
 $scolor: #FF1177;
 *{
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
+    padding   : 0;
+    margin    : 0;
+    font-size : 16px;
 }
 @mixin style {
-    color: #fff;
+    color      : #fff;
     font-family: 'Monoton', cursive;
-    font-size: 1.75rem;
-    animation: neon1 1.5s ease-in-out infinite alternate;
+    font-size  : 1.75rem;
+    animation  : neon1 1.5s ease-in-out infinite alternate;
     
 }
 
 body{
     background-color: #222222;
-    background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
-    font-family: 'Monoton', cursive;
-    font-size: 1.5rem;
-    text-align: center;
+    background      : repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+    font-family     : 'Monoton', cursive;
+    font-size       : 1.5rem;
+    text-align      : center;
     h1{
-        background:rgba($pcolor, 0.6);
-        padding: 10px;
-        font-size: 1.5rem;
-        color: white;
-
+        background: rgba($pcolor, 0.6);
+        padding   : 10px;
+        font-size : 1.5rem;
+        color     : white;
     }
     h4{
-        color: rgba($pcolor, 0.4);
+        color      : rgba($pcolor, 0.4);
         font-family: Iceland;
-        padding: 10px;
+        padding    : 10px;
     }
     .watchface{
-        text-transform: uppercase;
-        padding: 20px auto;
-        display: grid;
-        grid-template-columns:repeat(13, auto) ;
-        grid-template-rows:repeat(8, auto) ; 
-        align-items: center;
-        justify-items: center;
-        align-content: center;
-        justify-content: center;
+        text-transform       : uppercase;
+        padding              : 20px auto;
+        display              : grid;
+        grid-template-columns: repeat(13, auto) ;
+        grid-template-rows   : repeat(8, auto) ;
+        align-items          : center;
+        justify-items        : center;
+        align-content        : center;
+        justify-content      : center;
         
         span{
            padding: 5px;
@@ -51,88 +50,82 @@ body{
             @include style();
 
             &:hover{
-                color:$scolor;
+                color    : $scolor;
                 animation: none;
             }
         }
 
     }
     .maintime,.date{
-        color:$scolor;
-            animation: none;
+        color    : $scolor;
+        animation: none;
+
         &:hover{
             @include style();
         }
         
     }
-    .dev{
-        @include style();
-        font-size: .5rem;
 
-        &:hover{
-            color: $scolor;
-            animation: none;
-        }
-
-    }
-    
 }
 
 footer{
-    display: flex;
-    align-items: center;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    text-align: center;
+    text-align     : center;
 }
 .contact{
 
     ul{
         list-style: none;
-        position: relative;
-        display: inline-block;
-        .text{
-            position: absolute;
-            top: 0; right: 0; left: 0;
-            background:$pcolor;
-            line-height: 50px;
+        position  : relative;
+        display   : inline-block;
+        .developer{
+            position     : absolute;
+            top          : 0;
+            right        : 0;
+            left         : 0;
+            background   : $pcolor;
+            line-height  : 50px;
             border-radius: 50px;
             @include style();
-            font-size: 18px;
+            font-size     : 17px;
             pointer-events: none;
             
         }
         li{
-            display: inline-block;
-            height: 50px; width: 50px;
-            background: $pcolor;
-            line-height: 55px;
-            margin: 0 -16px;
-            cursor: pointer;
+            display      : inline-block;
+            height       : 50px;
+            width        : 50px;
+            background   : $pcolor;
+            line-height  : 55px;
+            margin       : 0 -11px;
+            cursor       : pointer;
             border-radius: 0;
-            transition: background-color .5s ease-out,
-                        border-radius .5s .25s ease-out,
-                        margin .5s .25s ease-out;
+            transition   : background-color .5s ease-out,
+                           border-radius .5s .25s ease-out,
+                           margin .5s .25s ease-out;
             &:hover{
                 background: rgba($pcolor,0.3);
             }
             i{
-                color: white;
-                font-size: 22px;
-                opacity: 0;
+                color     : white;
+                font-size : 22px;
+                opacity   : 0;
                 transition: opacity 1.7s;
             }
-            &:nth-child(1){
+            &:first-child{
                 border-bottom-left-radius: 25px;
-                border-top-left-radius: 25px;
+                border-top-left-radius   : 25px;
             }
-            &:nth-child(5){
+            &:last-child{
                 border-bottom-right-radius: 25px;
-                border-top-right-radius: 25px;
+                border-top-right-radius   : 25px;
             }
         }
         &:hover{
-            .text{
-                opacity: 0;
+            .developer{
+                opacity   : 0;
                 transition: opacity 0.5 .125 ease-out;
             }
             i{
@@ -140,7 +133,7 @@ footer{
             }
             li{
                 border-radius: 50px;
-                margin: 0 3px;
+                margin       : 0 10px;
             }
         }
     }
@@ -148,9 +141,9 @@ footer{
 
 @keyframes neon1 {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $scolor, 0 0 70px $scolor, 0 0 80px $scolor, 0 0 100px $scolor, 0 0 150px $scolor;
     }
     to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $scolor, 0 0 35px $scolor, 0 0 40px $scolor, 0 0 50px $scolor, 0 0 75px $scolor;
     }
   }
